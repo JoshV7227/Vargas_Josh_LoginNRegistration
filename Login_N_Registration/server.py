@@ -11,11 +11,6 @@ def index():
     return render_template('index.html')
 
 
-#The next step is creating the validations, we have created the register
-#part. The display html could use a little work
-
-
-
 
 
 
