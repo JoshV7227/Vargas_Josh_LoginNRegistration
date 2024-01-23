@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login N Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-3">
+        <h1 style="font-weight: 400; text-decoration: underline; color: dodgerblue; " class="display-3" >Login and Registration</h1>
+        <div class="row">
+            <div id="form" class="col m-3 p-3 bg-dark text-white text-center"><h2>REGISTER</h2>
+                <form action="/register" method="POST" >
+                    <div class="mb-3 mt-3">
+                        <label for="first_name"> First Name:</label>
+                        <input type="first_name" class="form-control" id="first_name" name="first_name">
+                        <input type="hidden" class="form-control" id="id" name="id">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="last_name"> Last Name:</label>
+                        <input type="last_name" class="form-control" id="last_name" name="last_name">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="email"> Email:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="password"> Password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="password"> Confirm Password:</label>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                    </div>
+                    <button style="background-color: dodgerblue; color: white" type="submit" id="button" class="btn">REGISTER</button>
+                </form>
+            </div>
+            <div class="col m-3 p-3 bg-dark text-white text-center"><h2>LOGIN</h2>
+                <form action="/login" method="POST" >
+                    <div class="mb-3 mt-3">
+                        <label for="email"> Email:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="password"> Password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <button style="background-color: dodgerblue; color: white" type="submit" id="button" class="btn">LOGIN</button>
+                </form>
+            </div>
+            <div> 
+                {% with messages = get_flashed_messages() %}
+
+                    {% if messages %}
+                        {% for message in messages %} 
+
+                        <p style="color: orangered;">{{message}}</p>
+
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
